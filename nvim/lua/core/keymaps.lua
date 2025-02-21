@@ -36,6 +36,39 @@ function M.windows()
     map("n", "<C-l>", "<C-w>l", opts)    -- jump to the right window
     map("n", "<C-h>", "<C-w>h", opts)    -- jump to the left  window
 
+    -- open a file by split the window
+    map("n", "<leader>j", function() 
+        vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
+            if input and input ~= "" then
+                vim.cmd('split | wincmd j | edit ' .. input)
+            end
+        end)
+    end, opts)
+    
+    map("n", "<leader>k", function() 
+        vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
+            if input and input ~= "" then
+                vim.cmd('split | wincmd k | edit ' .. input)
+            end
+        end)
+    end, opts)
+
+    map("n", "<leader>h", function() 
+        vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
+            if input and input ~= "" then
+                vim.cmd('vsplit | wincmd h | edit ' .. input)
+            end
+        end)
+    end, opts)
+
+    map("n", "<leader>l", function() 
+        vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
+            if input and input ~= "" then
+                vim.cmd('vsplit | wincmd v | edit ' .. input)
+            end
+        end)
+    end, opts)
+
     -- close current window
     map({"n", "v"}, "<leader>q", ":q<CR>", opts)
     map({"n", "v"}, "<leader>w", ":wq<CR>", opts)
