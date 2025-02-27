@@ -99,8 +99,8 @@ end
 function M.jumpto()
     map({"n", "v"}, "<leader>j", "G",  opts)    -- jump to the first line of the file
     map({"n", "v"}, "<leader>k", "gg", opts)    -- jump to the end of the file
-    map({"n", "v"}, "<leader>l", "0",  opts)    -- jump to the start of the current line
-    map({"n", "v"}, "<leader>h", "$",  opts)    -- jump to the end of the current line
+    map({"n", "v"}, "<leader>h", "0",  opts)    -- jump to the start of the current line
+    map({"n", "v"}, "<leader>l", "$",  opts)    -- jump to the end of the current line
 
 
     map({"n", "v"}, "J", "5j", opts)
