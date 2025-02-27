@@ -37,7 +37,7 @@ function M.windows()
     map("n", "<C-h>", "<C-w>h", opts)    -- jump to the left  window
 
     -- open a file by split the window
-    map("n", "<leader>j", function() 
+    map("n", "<leader>sj", function() 
         vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
             if input and input ~= "" then
                 vim.cmd('split | wincmd j | edit ' .. input)
@@ -45,7 +45,7 @@ function M.windows()
         end)
     end, opts)
     
-    map("n", "<leader>k", function() 
+    map("n", "<leader>sk", function() 
         vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
             if input and input ~= "" then
                 vim.cmd('split | wincmd k | edit ' .. input)
@@ -53,7 +53,7 @@ function M.windows()
         end)
     end, opts)
 
-    map("n", "<leader>h", function() 
+    map("n", "<leader>sh", function() 
         vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
             if input and input ~= "" then
                 vim.cmd('vsplit | wincmd h | edit ' .. input)
@@ -61,10 +61,10 @@ function M.windows()
         end)
     end, opts)
 
-    map("n", "<leader>l", function() 
+    map("n", "<leader>sl", function() 
         vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
             if input and input ~= "" then
-                vim.cmd('vsplit | wincmd v | edit ' .. input)
+                vim.cmd('vsplit | wincmd l | edit ' .. input)
             end
         end)
     end, opts)
@@ -78,7 +78,7 @@ end
 
 function M.savefile()
     map({"n", "v"}, "C-s", ":w<CR>", opts)
-    map("i", "C-s", "<ESC>:w<CR>a", opts)
+    -- map("i", "C-s", "<ESC>:w<CR>a", opts)
 end
 
 
@@ -97,6 +97,12 @@ end
 
 
 function M.jumpto()
+    map({"n", "v"}, "<leader>j", "G",  opts)    -- jump to the first line of the file
+    map({"n", "v"}, "<leader>k", "gg", opts)    -- jump to the end of the file
+    map({"n", "v"}, "<leader>l", "0",  opts)    -- jump to the start of the current line
+    map({"n", "v"}, "<leader>h", "$",  opts)    -- jump to the end of the current line
+
+
     map({"n", "v"}, "J", "5j", opts)
     map({"n", "v"}, "K", "5k", opts)
     map({"n", "v"}, "H", "5h", opts)

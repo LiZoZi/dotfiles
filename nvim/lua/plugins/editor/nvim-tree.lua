@@ -1,5 +1,5 @@
 local M = {
-    "nvim-neo-tree/neo-tree.nvim"
+    "nvim-neo-tree/neo-tree.nvim", 
 
 }
 
