@@ -1,4 +1,4 @@
-local M = {
+M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
     languages = {"c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", 
