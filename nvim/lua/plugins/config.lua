@@ -8,7 +8,7 @@ function M.config()
         -- editor
         require( 'plugins.editor.nvim-treesitter' ),
 
-        --require( 'plugins.editor.neo-tree' )
+        require( 'plugins.editor.neo-tree' ),
 
 
         -- scheme
