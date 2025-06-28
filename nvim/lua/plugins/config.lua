@@ -2,7 +2,6 @@ local M = {}
 
 
 function M.config()
-
     local plugins = {
 
         -- editor

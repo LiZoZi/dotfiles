@@ -7,14 +7,10 @@ local M = {
 
     style = "day",
     styles = {
-        sidebars = "transparent", -- style for sidebars, see below
-        floats = "transparent",  -- style for floating windows
+--        sidebars = "transparent", -- style for sidebars, see below
+--        floats = "transparent",  -- style for floating windows
     },
 
-
-    config = function()
-        vim.cmd( [[colorscheme tokyonight]] )
-    end,
 }
 
 

@@ -36,7 +36,7 @@ function M.windows()
     map("n", "<C-l>", "<C-w>l", opts)    -- jump to the right window
     map("n", "<C-h>", "<C-w>h", opts)    -- jump to the left  window
 
-    -- open a file by split the window
+    -- open a file by split the window: <leader> + s + hjkl
     map("n", "<leader>sj", function() 
         vim.ui.input({ prompt = 'Enter file name: ' }, function(input)
             if input and input ~= "" then
@@ -77,7 +77,7 @@ end
 
 
 function M.savefile()
-    map({"n", "v"}, "C-s", ":w<CR>", opts)
+    map({"n", "v"}, "C-s", ":w<CR>")
     -- map("i", "C-s", "<ESC>:w<CR>a", opts)
 end
 
