@@ -12,11 +12,11 @@ end
 
 
 function M.windows()
-    -- windows split: alt + hjkl
-    map("n", "<A-j>", ":split  | wincmd j <CR>", opts)    -- split vertically and focus on the loewr window
-    map("n", "<A-k>", ":split  | wincmd k <CR>", opts)    -- split vertically and focus on the upper window
-    map("n", "<A-h>", ":vsplit | wincmd h <CR>", opts)    -- split horizontally and focus on the left window
-    map("n", "<A-l>", ":vsplit | wincmd l <CR>", opts)    -- split horizontally and focus on the right window
+    -- windows split: alt + arrow keys
+    map("n", "<A-Down>",  ":split  | wincmd j <CR>", opts)    -- split vertically and focus on the loewr window
+    map("n", "<A-Up>",    ":split  | wincmd k <CR>", opts)    -- split vertically and focus on the upper window
+    map("n", "<A-Left>",  ":vsplit | wincmd h <CR>", opts)    -- split horizontally and focus on the left window
+    map("n", "<A-Eight>", ":vsplit | wincmd l <CR>", opts)    -- split horizontally and focus on the right window
 
     -- open a terminal and auto into insert mode: <leader> + t + hjkl
     map("n", "<leader>tj", ":split  | wincmd j | term <CR> :startinsert <CR>", opts)    
@@ -73,12 +73,27 @@ function M.windows()
     map({"n", "v"}, "<leader>q", ":q<CR>", opts)
     map({"n", "v"}, "<leader>w", ":wq<CR>", opts)
     map("t", "<leader>q", "<C-\\><C-N>:q<CR>", opts)
+    
+    --map("n", "<leader>tt", ":Neotree <CR>", opts)
+end
+
+
+function M.lines()
+    -- Move lines: Alt + arrow keys
+    map("n", "<A-j>", "<cmd>execute 'move .+' . v:count1<cr>==", opts)
+    map("n", "<A-k>", "<cmd>execute 'move .-' . (v:count1 + 1)<cr>==", opts)
+    
+    map("v", "<A-j>", ":<C-u>execute \"'<, '>move '<+\" . v:count1<cr>gv=gv", opts)
+    map("v", "<A-k>", ":<C-u>execute \"'<, '>move '<-\" . (v:count1 + 1)<cr>gv=gv", opts)
+
+    map("i", "<A-j>", "<esc><cmd>m .+1<cr>==gi", opts)
+    map("i", "<A-k>", "<esc><cmd>m .-2<cr>==gi", opts)
 end
 
 
 function M.savefile()
-    map({"n", "v"}, "C-s", ":w<CR>")
-    -- map("i", "C-s", "<ESC>:w<CR>a", opts)
+    -- save files
+    map({"n", "s", "i", "x"}, "<C-s>", ":w<cr><esc>")
 end
 
 
@@ -113,6 +128,7 @@ end
 function M.setup()
     M.leaderset()
     M.windows()
+    M.lines()
     M.savefile()
     M.indent()
     M.jumpto()
