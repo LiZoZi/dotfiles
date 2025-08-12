@@ -11,10 +11,11 @@ local M = {
 }
 
 
-function M.keymaps()
-    local map = vim.keymap.set
-    local opts = { silent = false }
+local map = vim.keymap.set
+local opts = { silent = false }
 
+
+function M.keymaps()
     map("n", "<leader>tt", ":Neotree <CR>", opts)
 end
 

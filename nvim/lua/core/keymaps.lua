@@ -93,7 +93,8 @@ end
 
 function M.savefile()
     -- save files
-    map({"n", "s", "i", "x"}, "<C-s>", ":w<cr><esc>")
+    map({"n", "s", "x"}, "<C-s>", ":w<cr><esc>")
+    map("i", "<C-s>", "<esc>:w<cr>a")
 end
 
 
