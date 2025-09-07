@@ -126,6 +126,11 @@ function M.jumpto()
 end
 
 
+function M.vim_terminal()
+    map( "t", "<Esc>", "<C-\\><C-n>", opts )
+end
+
+
 function M.setup()
     M.leaderset()
     M.windows()
@@ -133,6 +138,7 @@ function M.setup()
     M.savefile()
     M.indent()
     M.jumpto()
+    M.vim_terminal()
 end
 
 
