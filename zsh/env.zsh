@@ -8,6 +8,7 @@ export EDITOR='nvim'
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
+export PATH=$PATH:/mnt/c/Windows/System32
 
 # [python]
 export PYENV_ROOT=$HOME/.pyenv

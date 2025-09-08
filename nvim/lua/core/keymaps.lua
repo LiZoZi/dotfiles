@@ -131,6 +131,16 @@ function M.vim_terminal()
 end
 
 
+function M.clipboard()
+    -- copy to system clipboard
+    map( 'v', 'y', ':w !clip.exe<cr><cr>', opts )
+    map( 'n', 'y', ':.w !clip.exe<cr><cr>', opts )
+
+    -- paste from system clipboard
+    --map( {'n', 'v'}, 'p', '"+p', opts )
+end
+
+
 function M.setup()
     M.leaderset()
     M.windows()
@@ -139,6 +149,7 @@ function M.setup()
     M.indent()
     M.jumpto()
     M.vim_terminal()
+    M.clipboard()
 end
 
 
