@@ -133,8 +133,8 @@ end
 
 function M.clipboard()
     -- copy to system clipboard
-    map( 'v', 'y', ':w !clip.exe<cr><cr>', opts )
-    map( 'n', 'y', ':.w !clip.exe<cr><cr>', opts )
+    map( 'v', '<leader>y', ':w !clip.exe<cr><cr>', opts )
+    map( 'n', '<leader>y', ':.w !clip.exe<cr><cr>', opts )
 
     -- paste from system clipboard
     --map( {'n', 'v'}, 'p', '"+p', opts )
