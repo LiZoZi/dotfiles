@@ -119,10 +119,10 @@ function M.jumpto()
     map({"n", "v"}, "<leader>l", "$",  opts)    -- jump to the end of the current line
 
 
-    map({"n", "v"}, "J", "5j", opts)
-    map({"n", "v"}, "K", "5k", opts)
-    map({"n", "v"}, "H", "5h", opts)
-    map({"n", "v"}, "L", "5l", opts)
+    map({"n", "v"}, "J", "15j", opts)
+    map({"n", "v"}, "K", "15k", opts)
+    map({"n", "v"}, "H", "15h", opts)
+    map({"n", "v"}, "L", "15l", opts)
 end
 
 

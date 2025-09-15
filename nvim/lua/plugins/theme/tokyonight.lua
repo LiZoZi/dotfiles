@@ -11,6 +11,10 @@ local M = {
 --        floats = "transparent",  -- style for floating windows
     },
 
+    config = function()
+        vim.cmd( [[colorscheme tokyonight]] )
+    end
+
 }
 
 

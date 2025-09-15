@@ -22,9 +22,6 @@ function M.theme()
     for k, v in pairs(basic_theme) do
         vim.opt[k] = v
     end
-
-    -- select the colorcheme
-    vim.cmd( [[colorscheme tokyonight]] )
 end
 
 

@@ -11,16 +11,7 @@ local M = {
 }
 
 
-local map = vim.keymap.set
-local opts = { silent = false }
-
-
-function M.keymaps()
-    map("n", "<leader>tt", ":Neotree <CR>", opts)
-end
-
-
-function M.theme()
-end
-
 return M 
+
+
+

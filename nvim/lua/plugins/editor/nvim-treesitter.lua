@@ -1,9 +1,9 @@
 M = {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    languages = {"c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", 
-                 "html", "python", "rust", "typescript", "bash", "markdown", "zig", 
-                 "matlab", "go"},
+    languages = {"c", "lua", "vim", "vimdoc", "javascript", 
+                 "html", "python", "rust", "typescript", "bash", 
+                 "markdown", "zig", "matlab", "go"},
 
     config = function()
         local configs = require('nvim-treesitter.configs')
